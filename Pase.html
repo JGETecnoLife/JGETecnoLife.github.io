@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="logo2.jpeg" type="image/x-icon">
+    <title>Sistema de Pase de Lista e Inasistencias</title>
+    <style>
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url("CECYTE-27.png"); /* Cambia la URL a tu imagen */
+    background-size: cover;
+    backdrop-filter: blur(5px); /* Aplicamos un filtro de desenfoque */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+
+.container {
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo con opacidad */
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 30px; /* Aumentamos el espacio interior del formulario */
+    width: 350px; /* Ajustamos el ancho del formulario */
+    text-align: center;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%; /* Ancho completo de los campos de entrada */
+    padding: 10px;
+    margin-bottom: 20px; /* Mayor margen inferior para separación */
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        input[type="submit"] {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        input:focus {
+    border: 2px solid #007BFF;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Iniciar Sesión</h2>
+        <form action="login.php" method="POST">
+            <input type="text" name="usuario" placeholder="Usuario" required>
+            <input type="password" name="contraseña" placeholder="Contraseña" required>
+            <input type="submit" value="Iniciar Sesión">
+        </form>
+    </div>  
+</body>
+</html>

@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="logo.jpeg" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>TecnoLife</title>
+    <style>
+      .header {
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+}
+
+.logo img {
+  height: 40px;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+.navbar li {
+  margin-right: 20px;
+}
+
+.navbar a {
+  color: #333;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #007bff;
+}
+
+  .hero {
+    background-image: url("hero.jpeg");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Estilos para el contenido que se muestra encima del video */
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    color: #fff; /* Ajusta el color del texto para que sea legible en el video difuminado */
+  }
+  
+  .hero-content {
+    text-align: center;
+    color: #000000;
+  }
+  
+  .hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+  }
+  
+  .hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+  }
+  
+  button {
+    padding: 10px 30px;
+    background-color: #fff;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  button:hover {
+    background-color: #333;
+    color: #fff;
+  }  
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  li {
+    margin-bottom: 10px;
+  }
+  
+  button {
+    background-color: #1e90ff;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 0;
+  }
+  
+  .about-content {
+    max-width: 600px;
+    margin-right: 30px;
+    text-align: center;
+  }
+  
+  .about-content h2 {
+    font-size: 3rem;
+    margin-bottom: 70px;
+  }
+  
+  .about-content ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .about-content li {
+    margin-bottom: 20px;
+    position: relative;
+    padding-left: 70px;
+  }
+  
+  .about-content li i {
+    position: absolute;
+    left: 0;
+    top: 4px;
+    color: #333;
+  }
+
+  .about-content ul li{
+    font-size: 25px;
+  }
+  
+  .about-img img {
+    height: 400px;
+    width: auto;
+    display: block;
+    margin: 0 auto;
+  }
+  .services-section {
+    background-color: #f9f9f9;
+    padding: 50px;
+  }
+  
+  .section-title {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .services-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .service-card {
+    position: relative;
+    width: 30%;
+    height: 300px;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+  }
+  
+  .service-card img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .service-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    background-color: rgba(0,0,0,0.7);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: all 0.3s ease;
+  }
+  
+  .service-card:hover .service-info {
+    opacity: 1;
+  }
+  
+  .service-info h3 {
+    margin: 0;
+    font-size: 24px;
+    text-align: center;
+  }
+  
+  .service-info p {
+    font-size: 14px;
+    text-align: center;
+    margin: 10px 0 0 0;
+  }
+  
+  
+  #portfolio {
+    background-color: #f2f2f2;
+    padding: 50px 0;
+  }
+  
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  
+  .card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    width: 80%;
+    max-width: 700px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+  }
+  
+  .card:hover .project-details {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .card-image {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .project-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  .project-details {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,0.8);
+    color: #fff;
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    z-index: 2;
+  }
+  
+  .client-image {
+    display: block;
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
+  
+  .client-details {
+    text-align: center;
+  }
+  
+  h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+  
+  p {
+    font-size: 1.1rem;
+    line-height: 1.4;
+    margin-bottom: 0;
+  }
+
+  footer {
+  background-color: #333;
+  color: #fff;
+  padding: 50px 0;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.col {
+  flex-basis: calc(33.33% - 20px);
+  margin-bottom: 30px;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+i {
+  margin-right: 10px;
+}
+
+.social-icons li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.social-icons li:last-child {
+  margin-right: 0;
+}
+
+.social-icons a {
+  display: inline-block;
+  background-color: #fff;
+  color: #000000;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+  font-size: 24px;
+}
+
+.social-icons a:hover {
+  background-color: #fff;
+  color: #333;
+}
+
+p {
+  margin-bottom: 0;
+}
+
+.nuestra-historia {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.historia-imagen {
+  flex-basis: 45%;
+  margin-bottom: 20px;
+}
+
+.historia-imagen img {
+  width: 100%;
+  height: auto;
+}
+
+.historia-texto {
+  flex-basis: 45%;
+}
+
+.historia-texto h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.historia-texto p {
+  line-height: 1.5;
+  text-align: justify;
+}
+
+    </style>
+  </head>
+<body>
+  <header class="header">
+    <div class="logo">
+      <img src="logo.jpeg" alt="Logo de la empresa">
+    </div>
+    <nav class="navbar">
+      <ul>
+        <li><a href="#Inicio">Inicio</a></li>
+        <li><a href="#acerca">Acerca de</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#portafolio">Portafolio</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>   
+  <div class="spacer"></div>  
+<section id="Inicio">
+  <section class="hero">
+    <div class="hero-content">
+      <h1>¡TecnoLife!</h1>
+      <p>Creando Tecnología para tu vida</p>
+      <a href="mas.html"><button>Conoce más</button></a>
+    </div>
+  </section>
+</section>    
+<section id="acerca">
+  <section class="about">
+    <div class="about-content">
+      <h2>Acerca de nosotros</h2>
+      <ul>
+        <li><i class="fas fa-check"></i>Calidad de software: Para TecnoLife, la calidad del software debe ser la principal prioridad en todo momento.</li>
+        <li><i class="fas fa-check"></i>Innovación constante: En un mercado tan competitivo como el desarrollo de software.</li>
+        <li><i class="fas fa-check"></i>Excelencia en el servicio al cliente: TecnoLife debe ofrecer un excelente servicio al cliente para mantener y fidelizar a sus clientes.</li>
+      </ul>
+    </div>
+    <div class="about-img">
+      <video autoplay muted loop>
+        <source src="EquipoVid.mp4" type="video/mp4">
+      </video>
+    </div>
+  </section>
+</section>
+<section id="servicios">
+  <section class="services-section">
+    <h2 class="section-title">Nuestros Servicios</h2>
+    <div class="services-container">
+      <div class="service-card">
+        <img src="Julio.jpeg" alt="Servicio 1">
+        <div class="service-info">
+          <h3>Desarrollo de Software</h3>
+          <p>Nuestro proceso de desarrollo de software se basa en las mejores prácticas de la industria, lo que nos permite garantizar un software confiable, seguro y fácil de usar.</p>
+        </div>
+      </div>
+      <div class="service-card">
+        <img src="Gonza.jpeg" alt="Servicio 2">
+        <div class="service-info">
+          <h3>Desarrollo de Páginas Web</h3>
+          <p>Nuestros servicios de desarrollo de páginas web incluyen la creación de sitios web estáticos y dinámicos, páginas de destino, sitios de comercio electrónico y sitios web personalizados.</p>
+        </div>
+      </div>
+      <div class="service-card">
+        <img src="Eriko.jpeg" alt="Servicio 3">
+        <div class="service-info">
+          <h3>Diseño de Aplicaciones Móviles</h3>
+          <p>Nuestro equipo de expertos en diseño y desarrollo móvil utiliza las últimas tecnologías y herramientas para crear aplicaciones móviles personalizadas que se ajusten a las necesidades específicas de cada cliente.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>        
+      <section id="portafolio">
+        <div class="container">
+          <h2>Nuestro Portafolio</h2>
+          <a href="Pase.html">
+            <div class="card">
+              <div class="card-image">
+                <img class="project-image" src="CECYTE-27.png" alt="Nombre del proyecto">
+                <div class="project-details">
+                  <img class="client-image" src="logo2.jpeg" alt="Nombre de la empresa que contrato el servicio">
+                  <div class="client-details">
+                    <h3>Pase de lista e inasistencias Cecyte 27</h3>
+                    <p>Sistema de administracion de una base de datos que se creo para el pase de lista e inasistencias del plantel cecyte 27 villa alta</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </section>      
+      <section id="contacto">
+        <footer>
+          <div class="container">
+            <div class="row">
+              <div class="col">
+                <h3>Contacto</h3>
+                <ul>
+                  <li><i class="fas fa-envelope"></i> Correo: tecnolifejge@gmail.com</li>
+                  <li><i class="fas fa-phone"></i> Teléfono: (+52) 2481638151</li>
+                </ul>
+              </div>
+              <div class="col">
+                <h3>Redes Sociales</h3>
+                <ul class="social-icons">
+                  <li><a href="https://www.facebook.com/profile.php?id=61551052700630&mibextid=ZbWKwL"><i class="fab fa-facebook"></i></a></li>
+                  <li><a href="https://twitter.com/TecnoLifeJGE"><i class="fab fa-twitter"></i></a></li>
+                  <li><a href="https://www.instagram.com/jgetecnolife/"><i class="fab fa-instagram"></i></a></li>
+                </ul>
+              </div>
+              <div class="col">
+                <h3>Dirección</h3>
+                <p>Calle Privada: Av.progreso #46 <br>Ciudad: Villa Alta, Estado: Tlaxcala<br>CP 90700<br>País: Mexico</p>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </section>
+      <script>
+        // Detecta el click en un enlace del menú
+$('nav a').click(function(event) {
+  // Previene el comportamiento normal del enlace (redirigir a otra página)
+  event.preventDefault();
+  // Obtiene el identificador de la sección a la que se quiere mover
+  var target = $(this).attr('href');
+  // Hace scroll hasta la sección correspondiente
+  $('html, body').animate({
+    scrollTop: $(target).offset().top
+  }, 1000);
+});
+      </script>                                                         
+</body>
+</html>
